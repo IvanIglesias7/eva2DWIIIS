@@ -12,14 +12,16 @@ import javax.persistence.*;
 public class notas {
 	
 	//CONSTRUCTOR
-	public notas(String cod_alumno, int nota_evaluacion, String cod_evaluacion) {
+	public notas(String md_uuid, Timestamp md_fch, int id_nota_evaluacion, String cod_alumno, int nota_evaluacion,
+			String cod_evaluacion) {
 		super();
+		this.md_uuid = md_uuid;
+		this.md_fch = md_fch;
+		this.id_nota_evaluacion = id_nota_evaluacion;
 		this.cod_alumno = cod_alumno;
 		this.nota_evaluacion = nota_evaluacion;
 		this.cod_evaluacion = cod_evaluacion;
 	}
-	
-	
 	
 	//GET AND SETTERS
 		
@@ -89,7 +91,7 @@ public class notas {
 	@Column(name = "nota_evaluacion")
 	int nota_evaluacion;
 	
-	@ManyToMany
+	@ManyToMany //señalo esta anotacion porque es un foreign key
 	@Column(name = "cod_evaluacion")
 	String cod_evaluacion;
 }

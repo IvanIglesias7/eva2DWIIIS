@@ -17,11 +17,11 @@ public class app {
 		//siguiente linea, hago las anotaciones validas.
 		ApplicationContext context = new ClassPathXmlApplicationContext("context.xml"); 
 		
-		//bean de consultas
+		//obtengo el bean que hay en la clase consultas
 		Consultas consulta = (Consultas) context.getBean(Consultas.class);
 		
 		//inserto lo siguiente en base de datos
-		consulta.insertarNota(new notas("13B",2, "11A"));
+		consulta.insertarNota(new notas("13B",null, 2, "11A", 0, null));
 		
 		
 		//lo muestro
